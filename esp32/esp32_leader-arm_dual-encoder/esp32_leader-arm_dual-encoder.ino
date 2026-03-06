@@ -35,7 +35,6 @@ void loop() {
     float enc1_degrees = enc1.getAngleDegrees();
     float enc2_degrees = enc2.getAngleDegrees();
 
-
     Serial.print("enc1: ");
     Serial.print(enc1_degrees);
     Serial.print(", enc2: ");
