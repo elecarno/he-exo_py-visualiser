@@ -13,8 +13,9 @@ enc4_deg = 0
 lineweight = 4
 
 s = 0.4 # spacing between encoders
-l1 = 2
+l1 = 1.0
 l2 = 0.6*l1
+l3 = 3.0*l1
 
 class Rotation:
     @classmethod
@@ -114,6 +115,12 @@ if __name__ == "__main__":
     )
     seg_2b.local_rotation = np.array([90, 0, 0])
 
+    # seg_3 = LineSegment(
+    #     seg_2b.get_end_position(),
+    #     seg_2b.get_total_rotation(),
+    #     l3
+    # )
+
 
     # plot line segments
     ax.plot(
@@ -155,6 +162,23 @@ if __name__ == "__main__":
         linewidth=lineweight,
         color="r"
     )
+
+    # ax.plot(
+    #     [
+    #         seg_3.position[0],
+    #         seg_3.get_end_position()[0],
+    #     ], 
+    #     [
+    #         seg_3.position[1],
+    #         seg_3.get_end_position()[1],
+    #     ], 
+    #     [
+    #         seg_3.position[2],
+    #         seg_3.get_end_position()[2],
+    #     ], 
+    #     linewidth=lineweight,
+    #     color="g"
+    # )
 
     # show plot
     plt.show()
